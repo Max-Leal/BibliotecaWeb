@@ -9,21 +9,29 @@
 <body>
 
     <div class="page-wrapper imgback2">
-        <div class="flex-container" id="space-bet">
-            <img src="Logo.png" alt="" class="logo">
-            <ul class="nav-links">
-                <li id="leftBorder"><a href="index.html">Home</a></li>
-                <li><a href="albumFotos.html">Album</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li id="rightBorder"><a href="consulta.html">Consulta</a></li>
-            </ul>
-
-            <input type="search" placeholder="Search">
-
-            <ul class="nav-links">
-                <li id="leftBorder"><a href="login.html">Login</a></li>
-                <li id="rightBorder"><a href="cadastro.html">Cadastro</a></li>
-            </ul>
+        <div class="menu">
+            <div class="logo"><img src="Logo.png" alt="" class="minilogo"></div>
+            <div class="home">
+                <button><a href="index.html">Home</a></button>
+            </div>
+            <div class="album">
+                <button><a href="albumFotos.html">Album</a></button>
+            </div>
+            <div class="sobre">
+                <button><a href="sobre.html">Sobre</a></button>
+            </div>
+            <div class="consulta">
+                <button><a href="consulta.html">Consulta</a></button>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="Search" />
+            </div>
+            <div class="login">
+                <button><a href="login.html">Login</a></button>
+            </div>
+            <div class="cadastro">
+                <button><a href="cadastro.html">Cadastro</a></button>
+            </div>
         </div>
 
         <div class="transparent mid-content" id="allBorder">
@@ -111,16 +119,32 @@
             </div>
         </div>
 
-        <div class="rodape" id="topBorder">©2025 TCompany. All rights reserved</div>
-
-        <div class="flex-container" id="center">
-            <ul class="nav-links">
-                <li id="leftBorder"><a href="">LinkedIn</a></li>
-                <li><a href="">GitHub</a></li>
-                <li><a href="">Gupy</a></li>
-                <li id="rightBorder"><a href="">Help</a></li>
-            </ul>
-        </div>
+        <footer>
+            <div class="rodape">
+              <div class="text" id="topBorder">
+                ©2025 TCompany. All rights reserved
+              </div>
+      
+              <div class="linkedin">
+                <button>
+                  <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                </button>
+              </div>
+              <div class="github">
+                <button>
+                  <a href="https://www.github.com" target="_blank">GitHub</a>
+                </button>
+              </div>
+              <div class="gupy">
+                <button>
+                  <a href="https://www.gupy.io" target="_blank">Gupy</a>
+                </button>
+              </div>
+              <div class="help">
+                <button><a href="" target="_blank">Help</a></button>
+              </div>
+            </div>
+          </footer>
     </div>
 </body>
 </html>

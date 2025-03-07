@@ -1,13 +1,14 @@
+/* Estilo Geral (Desktop) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    --cor-primaria: #fad8ab; 
-    --cor-secundaria: #ffeee0;
-    --cor-secundaria-transp: rgb(255, 238, 224, 0);
-    --cor-terciaria: #ffc181;
-    --cor-quartenaria: #e18437;
-    --cor-quintenaria: #ffc181;
+  --cor-primaria: #fad8ab;
+  --cor-secundaria: #ffeee0;
+  --cor-secundaria-transp: rgb(255, 238, 224, 0);
+  --cor-terciaria: #ffc181;
+  --cor-quartenaria: #e18437;
+  --cor-quintenaria: #ffc181;
 }
 
 body {
@@ -52,7 +53,7 @@ button {
   padding: 5px;
   border-radius: 10px;
   border: solid var(--cor-secundaria);
-  background-color: var(--cor-terciaria);
+  background-color: var(--cor-primaria);
   padding: 10px;
 }
 
@@ -66,31 +67,111 @@ img {
   height: 200px;
 }
 
+.page-wrapper {
+  display: grid;
+  grid-auto-rows: 1fr 5fr 1fr;
+
+  min-height: 100vh;
+}
+
+/* Menu */
+.menu {
+  display: grid;
+  gap: 10px;
+  grid-template-areas: "logo home album sobre consulta search login cadastro";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+  justify-content: space-evenly;
+  background-color: var(--cor-quintenaria);
+  padding: 5px;
+}
+
+.menu > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cor-quintenaria);
+}
+
+.menu > div button {
+  padding: 10px;
+  border-radius: 10px;
+  border: solid var(--cor-secundaria);
+  background-color: var(--cor-primaria);
+}
+
+.menu > div button:hover {
+  background-color: var(--cor-quartenaria);
+  transform: scale(1.03);
+}
+
+.menu > div a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Rodapé */
+.rodape {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "text text text text"
+    "linkedin github gupy help";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: rgb(107, 107, 107);
+  background-color: var(--cor-quintenaria);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.rodape > div {
+  background-color: var(--cor-quintenaria);
+}
+
+.rodape > div.text {
+  grid-area: text;
+  background-color: var(--cor-secundaria);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.rodape > div.linkedin {
+  grid-area: linkedin;
+}
+
+.rodape > div.github {
+  grid-area: github;
+}
+
+.rodape > div.gupy {
+  grid-area: gupy;
+}
+
+.rodape > div.help {
+  grid-area: help;
+}
+
+/* Logo e fundo */
+.minilogo {
+  width: 50px;
+  height: auto;
+}
 
 .imgback {
-  background-image: url('https://images.unsplash.com/photo-1508107536691-b1449928187d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmlibGlvdGVjYSUyMGFudGlnYXxlbnwwfHwwfHx8MA%3D%3D');
+  background-image: url("https://images.unsplash.com/photo-1508107536691-b1449928187d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmlibGlvdGVjYSUyMGFudGlnYXxlbnwwfHwwfHx8MA%3D%3D");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .imgback2 {
-  background-image: url('https://images.pexels.com/photos/877971/pexels-photo-877971.jpeg?cs=srgb&dl=pexels-juanpphotoandvideo-877971.jpg&fm=jpg');
+  background-image: url("https://images.pexels.com/photos/877971/pexels-photo-877971.jpeg?cs=srgb&dl=pexels-juanpphotoandvideo-877971.jpg&fm=jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.visible {
-  position: relative;
-  overflow: hidden; 
-  opacity: 1;
-}
-.transparent {
-  position: relative;
-  overflow: hidden; 
-  background-color: rgb(255, 255, 255, 0);
-}
 
+/* Flex container */
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
@@ -129,110 +210,15 @@ img {
   transition: background-color 0.3s ease;
 }
 
-.rounded-mid {
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  width: 900px;
-  border-radius: 10px;
-}
-
-.mid-content {
-  padding-top: 50px; 
-  flex-grow: 1; 
-  padding-bottom: 50px; 
-}
-
-.mid-content > div {
-  margin: 0 auto;
-  position: relative;
-  background-color: var(--cor-secundaria-transp);
-  padding: 2em;
-  width: 400px;
-  height: 500px;
-  border-radius: 10px;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-  z-index: 2;
-}
-
-.normal {
-  height: 700px;
-}
-
-.card{
-  margin: 0 auto;
-  width: 400;
-  height: 500px;
-  background: var(--cor-secundaria-transp);
-  text-align: center;
-  border-radius: 10px;
-  position: relative;  
-}
-
-@property --angle{
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.card::after, .card::before{
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle), transparent 70%, #ffc181, #e18437, #d86126, #c04b10);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  padding: 3px;
-  border-radius: 10px;
-  animation: 5s spin linear infinite;
-}
-.card::before{
-  filter: blur(1.5rem);
-  opacity: 0.5;
-}
-@keyframes spin{
-  from{
-    --angle: 0deg;
-  }
-  to{
-    --angle: 360deg;
-  }
-}
-
-.mid-content > div > div > div, .mid-content > div > div{
-  background-color: var(--cor-primaria);
-}
-
-.logo {
-  height: auto;
-}
-
-.flex-container > .nav-links > li:hover {
-  background-color: var(--cor-quartenaria);
-  transform: scale(1.03);
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
+/* Livros */
 .livros {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px; 
+  gap: 20px;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 .livro {
@@ -240,18 +226,18 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 150px; 
-  height: 300px; 
+  width: 150px;
+  height: 300px;
   background-color: var(--cor-secundaria);
   padding: 10px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out; 
+  transition: transform 0.2s ease-in-out;
 }
 
 .livro:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .livro img {
@@ -261,87 +247,152 @@ img {
   margin-bottom: 10px;
 }
 
-
-.rodape {
-  color: rgb(107, 107, 107);
-  background-color: var(--cor-quintenaria);
+.card {
+  margin: 0 auto;
+  width: 400px;
+  height: 500px;
+  background: var(--cor-secundaria-transp);
   text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-}
-
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
-}
-
-#login {
-  height: 350px;
-}
-
-#center {
-  justify-content: center;
-}
-
-#space-bet {
-  justify-content: space-between;
-}
-
-#allBorder {
   border-radius: 10px;
-  flex-grow: 1;
+  position: relative;
 }
 
-#rightBorder {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
-#leftBorder {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    #ffc181,
+    #e18437,
+    #d86126,
+    #c04b10
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 5s spin linear infinite;
+}
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
 }
 
-#topBorder {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 
-#bottomBorder {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 16px;
+.transparent {
+  position: relative;
+  overflow: hidden; 
+  background-color: rgb(255, 255, 255, 0);
 }
 
-#topText {
-  margin-bottom: 50px;
-  margin-top: 20px;
+.visible {
+  position: relative;
+  overflow: hidden; 
+  opacity: 1;
+  z-index: +1;
 }
 
-#bottomText {
-  margin-top: 20px;
+/* Responsividade - Celular */
+@media (max-width: 480px) {
+  .menu {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "home"
+      "album"
+      "sobre"
+      "consulta"
+      "search"
+      "login"
+      "cadastro";
+  }
+
+  .rodape {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "linkedin"
+      "github"
+      "gupy"
+      "help";
+  }
+
+  .livros {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
 }
 
-#linkedin-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 18px;
+/* Responsividade - Tablet */
+@media (max-width: 768px) {
+  .menu {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "logo home album sobre"
+      "consulta search login cadastro";
+  }
+
+  .rodape {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "text text"
+      "linkedin github"
+      "gupy help";
+  }
+
+  .livros {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
 }
 
-#linkedin-link:hover {
-  color: #0a66c2;
+/* Responsividade - Computador */
+@media (min-width: 1024px) {
+  .menu {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+  }
+
+  .rodape {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .livros {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .flex-container {
+    flex-direction: row;
+  }
 }
-
-#linkedin-link i {
-  margin-right: 8px;
-}
-
-
-
-
-
-
-
