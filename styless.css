@@ -1,4 +1,3 @@
-/* Estilo Geral (Desktop) */
 * {
   margin: 0;
   padding: 0;
@@ -69,12 +68,17 @@ img {
 
 .page-wrapper {
   display: grid;
-  grid-auto-rows: 1fr 5fr 1fr;
+  grid-auto-rows: 1fr 7fr 1fr;
 
   min-height: 100vh;
 }
 
-/* Menu */
+.mid-content {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
 .menu {
   display: grid;
   gap: 10px;
@@ -171,7 +175,6 @@ img {
   background-repeat: no-repeat;
 }
 
-/* Flex container */
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
@@ -210,7 +213,6 @@ img {
   transition: background-color 0.3s ease;
 }
 
-/* Livros */
 .livros {
   list-style: none;
   display: grid;
@@ -249,15 +251,16 @@ img {
 
 .card {
   margin: 0 auto;
-  width: 400px;
-  height: 500px;
-  background: var(--cor-secundaria-transp);
+  max-width: 400px;
+  max-height: 500px;
+  background: var(--cor-secundaria);
   text-align: center;
   border-radius: 10px;
   position: relative;
+  
 }
 
-@property --angle {
+@property --angle{
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
@@ -279,9 +282,9 @@ img {
   );
   top: 50%;
   left: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
   z-index: -1;
-  padding: 3px;
+  padding: 5px;
   border-radius: 10px;
   animation: 5s spin linear infinite;
 }
@@ -308,8 +311,7 @@ img {
 .visible {
   position: relative;
   overflow: hidden; 
-  opacity: 1;
-  z-index: +1;
+  opacity: +1;
 }
 
 /* Responsividade - Celular */
